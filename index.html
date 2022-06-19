@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Susanna and Jay</title>
+		<link rel="stylesheet" href="assets/style.css">
+	</head>
+
+	<body style="background-color: #762222; margin: 0;">
+		<div id="scene">
+			<div data-depth="0.3" class="bamboo">
+				<img src="assets/bamboo1.svg" class="bamboo" />
+			</div>
+			<div data-depth="0.25" class="bamboo">
+				<img src="assets/bamboo2.svg" class="bamboo" />
+			</div>
+			<div data-depth="0.2" class="bamboo">
+				<img src="assets/bamboo3.svg" class="bamboo" />
+			</div>
+			<div data-depth="0.15" class="bamboo">
+				<img src="assets/bamboo4.svg" class="bamboo" />
+			</div>
+			<div data-depth="0.1" class="bamboo">
+				<img src="assets/bamboo5.svg" class="bamboo" />
+			</div>
+			<div data-depth="0.05" class="bamboo">
+				<img src="assets/bamboo6.svg" class="bamboo" />
+			</div>
+			<div data-depth="0" class="bamboo">
+				<img src="assets/bamboo7.svg" class="bamboo" />
+			</div>
+
+			<div data-depth="0.3" class="bambooflip">
+				<img src="assets/bamboo1.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0.25" class="bambooflip">
+				<img src="assets/bamboo2.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0.2" class="bambooflip">
+				<img src="assets/bamboo3.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0.15" class="bambooflip">
+				<img src="assets/bamboo4.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0.1" class="bambooflip">
+				<img src="assets/bamboo5.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0.05" class="bambooflip">
+				<img src="assets/bamboo6.svg" class="bambooflip" />
+			</div>
+			<div data-depth="0" class="bambooflip">
+				<img src="assets/bamboo7.svg" class="bambooflip" />
+			</div>
+
+			<div data-depth="0.6" style="width:100%;">
+				<img src="assets/double_happiness_round_gold.svg" class="goldlogo1" />
+			</div>
+			<div data-depth="0.5" style="width:100%;">
+				<img src="assets/elephant_gold.svg" class="goldlogo2" />
+			</div>
+			<div class="reqPermission" id="reqPermission" data-depth="0" data-pointer-events="true"></div>
+
+			<div data-depth="0.3" data-pointer-events="true" class="button">
+				<a href="https://verojphotography.shootproof.com/gallery/17869566/"><button>Photo Gallery</button></a>
+				<br /><br />
+				<a href="https://youtu.be/ASkZVVE2iOY"><button>Highlights Video</button></a>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script>
+
+function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            console.log("accelerometer permission granted");
+			document.getElementById('reqPermission').style.display = "none"
+			var scene = document.getElementById('scene');
+			var parallaxInstance = new Parallax(scene);
+        }
+    });
+}
+
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
+window.addEventListener('load', (event) => {
+	if(iOS()) {
+		document.getElementById('reqPermission').innerHTML = '<a onClick="getAccel()">Launch special effects</a>'
+		document.getElementById('reqPermission').style.display = 'block'
+	} else {
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene);
+	}
+});
+
+	</script>
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.susannaandjay.co.uk"]);
+  _paq.push(["setDomains", ["*.susannaandjay.co.uk","*.wedding.susannaandjay.co.uk","*.www.susannaandjay.co.uk"]]);
+  _paq.push(["enableCrossDomainLinking"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.susannaandjay.co.uk/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+</html>

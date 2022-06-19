@@ -1,0 +1,112 @@
+div#scene > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
+div.bamboo {
+	height: 100%;
+}
+
+div.bamboo > img.bamboo {
+	height: 140vh;
+	margin-top: -20vh;
+	margin-left: calc(30vw - 105vh);
+}
+
+div.bambooflip {
+	height: 100%;
+}
+
+div.bambooflip > img.bambooflip {
+	height: 140vh;
+	margin-top: -20vh;
+	margin-left: 70vw;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+img.goldlogo1 {
+	margin-left: auto;
+	margin-right: auto;
+	height: 30vh;
+	max-width: 90vw;
+	margin-top: 5vh;
+	display: block;
+}
+
+img.goldlogo2 {
+	margin-left: auto;
+	margin-right: auto;
+	height: 30vh;
+	max-width: 90vw;
+	margin-top: 65vh;
+	display: block;
+}
+
+div.button {
+	text-align: center;
+	margin-top: 40vh;
+	width: 100%;
+}
+
+div.button > a > button {
+	font-size: 1.5rem;
+	background-color: #ffc107;
+	border-color: #ffc107;
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: .375rem .75rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+div.button > a > button:hover {
+	color: #000;
+	background-color: #ffca2c;
+	border-color: #ffc720;
+}
+
+div.button > a > button:active:focus {
+	box-shadow: 0 0 0 .25rem rgba(217,164,6,.5);
+}
+
+div.button > a > button:focus {
+	color: #000;
+	background-color: #ffca2c;
+	border-color: #ffc720;
+	box-shadow: 0 0 0 .25rem rgba(217,164,6,.5);
+	outline: 0;
+}
+
+div.button > a {
+	pointer-events: all;
+}
+div.button > a > button:active {
+	color: #000;
+	background-color: #ffcd39;
+	border-color: #ffc720;
+}
+
+div.reqPermission {
+	text-align: center;
+	color: #ffffff;
+	font-size: 1.2rem;
+	width: 100%;
+}
+
+div.reqPermission > a {
+	font-family: sans-serif;
+	font-style: italic;
+	text-decoration: underline;
+	pointer-events: all;
+	cursor: pointer;
+}
